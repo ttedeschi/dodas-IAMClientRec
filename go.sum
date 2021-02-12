@@ -44,6 +44,8 @@ github.com/dciangot/sts-wire v0.0.5 h1:xBtSjBqZDVNpAaZessQRMBY2QX3UJFWv3PWwjEmMr
 github.com/dciangot/sts-wire v0.0.5/go.mod h1:NKe0y7/N45caNSh+8jMXmdnNjLeWfRIosTcCgZF7s8I=
 github.com/dciangot/sts-wire v0.0.6 h1:VNGzG3Jbj0i2c1FfS1spHaRI1Hq7v8HfXFfkAsvPf6k=
 github.com/dciangot/sts-wire v0.0.6/go.mod h1:NKe0y7/N45caNSh+8jMXmdnNjLeWfRIosTcCgZF7s8I=
+github.com/dciangot/sts-wire v0.0.7 h1:bvV9p/M9IOAQrPsqH9tIyApzDmUKUZJBwDlwWhgbUzc=
+github.com/dciangot/sts-wire v0.0.7/go.mod h1:NKe0y7/N45caNSh+8jMXmdnNjLeWfRIosTcCgZF7s8I=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible h1:7qlOGliEKZXTDg6OTjfoBKDXWrumCAMpl/TFQ4/5kLM=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/djherbis/atime v1.0.0/go.mod h1:5W+KBIuTwVGcqjIfaTwt+KSYX1o6uep8dtevevQP/f8=

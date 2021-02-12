@@ -3,7 +3,7 @@ package main
 // ClientTemplate ..
 const ClientTemplate = `{
 	"redirect_uris": [
-	  "http://{.Host}:{{ .Port }}/oauth2/callback"
+	  "{{ .CallbackURL }}"
 	],
 	"client_name": "{{ .ClientName }}",
 	"contacts": [

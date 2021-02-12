@@ -44,6 +44,13 @@ func main() {
 		return
 	}
 
+	callback := os.Getenv("OAUTH_CALLBACK")
+
+	if callback == "" {
+		fmt.Println("No Service redirect callback url specified, please set env OAUTH_CALLBACK")
+		return
+	}
+
 	confDir := "." + instance
 
 	_, err := os.Stat(confDir)
@@ -52,9 +59,8 @@ func main() {
 	}
 
 	clientConfig := core.IAMClientConfig{
-		Host:       "localhost",
-		Port:       3128,
-		ClientName: "oidc-client",
+		CallbackURL: callback,
+		ClientName:  instance,
 	}
 
 	// Create a CA certificate pool and add cert.pem to it

@@ -51,6 +51,6 @@ jobs:
           context: ./
           outputs: "type=registry,push=true"
           tags: |
-              ghcr.io/${{ steps.get_repo_owner.outputs.repo_owner }}/dodas-iam-client-rec:$RELEASE_VERSION
+              ghcr.io/${{ steps.get_repo_owner.outputs.repo_owner }}/dodas-iam-client-rec:${{ env.RELEASE_VERSION }}
           file: ./Dockerfile
           platforms: linux/amd64

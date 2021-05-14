@@ -10,7 +10,7 @@ const ClientTemplate = `{
 	  "client@iam.test"
 	],
 	"token_endpoint_auth_method": "client_secret_basic",
-	"scope": "address phone openid email profile offline_access wlcg groups",
+	"scope": "address phone openid email profile offline_access wlcg wlcg.groups",
 	"grant_types": [
 	  "refresh_token",
 	  "authorization_code"

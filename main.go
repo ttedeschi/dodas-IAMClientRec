@@ -24,6 +24,34 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+type WellKnown struct {
+	RegisterEndpoint string `json:"registration_endpoint"`
+}
+
+func GetRegisterEndpoint(endpoint string) (register_endpoint string){
+	var c http.Client
+	well_known := endpoint + "/.well-known/openid-configuration"
+	resp, err := c.Get(well_known)
+
+	if err != nil {
+		panic(err)
+	}
+
+	defer resp.Body.Close()
+
+	body, err := io.ReadAll(resp.Body)
+
+	var wk WellKnown
+
+	errUnmarshall := json.Unmarshal(body, &wk)
+
+	if errUnmarshall != nil {
+		panic(errUnmarshall)
+	}
+
+	return string(wk.RegisterEndpoint)
+}
+
 func tryContainerMachineID() (machineID string, err error) {
 	// Ref: https://stackoverflow.com/questions/23513045/how-to-check-if-a-process-is-running-inside-docker-container
 	cgroupFile, err := os.Open("/proc/self/cgroup")
@@ -233,7 +261,7 @@ func (t *InitClientConfig) InitClient(instance string) (endpoint string, clientR
 			endpoint = t.IAMServer
 		}
 
-		register := endpoint + "/register"
+		register := GetRegisterEndpoint(endpoint)
 
 		log.Debug().Str("IAM register url", register).Msg("credentials")
 		color.Green.Printf("==> IAM register url: %s\n", register)
